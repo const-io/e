@@ -20,7 +20,7 @@ var e = require( 'const-e' );
 
 #### e
 
-The mathematical constant [*e*][e], also known as Euler's number or Napier's constant. [*e*] is the base of the natural logarithm.
+The mathematical constant [*e*][e], also known as Euler's number or Napier's constant. [*e*][e] is the base of the natural logarithm.
 
 ``` javascript
 e === 2.718281828459045;
