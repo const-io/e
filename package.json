@@ -38,7 +38,8 @@
     "const",
     "e",
     "E",
-    "euler"
+    "euler",
+    "napier"
   ],
   "bugs": {
     "url": "https://github.com/const-io/e/issues"

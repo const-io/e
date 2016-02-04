@@ -2,12 +2,10 @@
 #############
 # VARIABLES #
 
-# Set the node.js environment to test:
+NPM ?= npm
 NODE_ENV ?= test
 
-# Kernel name:
 KERNEL ?= $(shell uname -s)
-
 ifeq ($(KERNEL), Darwin)
 	OPEN ?= open
 else
@@ -55,10 +53,7 @@ JSHINT_REPORTER ?= ./node_modules/jshint-stylish
 
 # FILES #
 
-# Source files:
 SOURCES ?= lib/*.js
-
-# Test files:
 TESTS ?= test/*.js
 
 
@@ -66,6 +61,29 @@ TESTS ?= test/*.js
 
 ###########
 # TARGETS #
+
+
+# HELP #
+
+.PHONY: help
+
+help:
+	@echo ''
+	@echo 'Usage: make <cmd>'
+	@echo ''
+	@echo '  make help                Print this message.'
+	@echo '  make notes               Search for code annotations.'
+	@echo '  make test                Run tests.'
+	@echo '  make test-cov            Run tests with code coverage.'
+	@echo '  make test-browsers       Run tests in a local web browser.'
+	@echo '  make view-cov            View the most recent code coverage report.'
+	@echo '  make view-browser-tests  View browser tests in a local web browser.'
+	@echo '  make lint                Run code linting.'
+	@echo '  make install             Install dependencies.'
+	@echo '  make clean               Clean the build directory.'
+	@echo '  make clean-node          Remove Node dependencies.'
+	@echo ''
+
 
 
 # NOTES #
@@ -159,16 +177,13 @@ lint-jshint: node_modules
 		./
 
 
+
 # NODE #
 
-# Install node_modules:
-.PHONY: install
+.PHONY: install clean-node
 
-install:
-	npm install
-
-# Clean node:
-.PHONY: clean-node
+install: package.json
+	$(NPM) install
 
 clean-node:
 	rm -rf node_modules

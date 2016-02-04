@@ -1,8 +1,8 @@
-e (Euler's number)
+*e*
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> [e (Euler's number)][e].
+> The mathematical constant [*e*][e].
 
 
 ## Installation
@@ -20,7 +20,7 @@ var e = require( 'const-e' );
 
 #### e
 
-The mathematical constant [e][e]. It is approximately equal to 2.718 and is the basis of natural logarithms.
+The mathematical constant [*e*][e], also known as Euler's number or Napier's constant. [*e*][e] is the base of the natural logarithm.
 
 ``` javascript
 e === 2.718281828459045;
@@ -33,6 +33,7 @@ e === 2.718281828459045;
 var e = require( 'const-e' );
 
 console.log( e );
+// returns 2.718281828459045
 ```
 
 To run the example code from the top-level application directory,
